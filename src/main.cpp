@@ -1,8 +1,12 @@
-#include <SFML/Graphics.hpp>
+#include "Generator.hpp"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(500, 200), "WorldGeneration");
+	constexpr unsigned int xWin = 500, yWin = 200;
+	constexpr int blockSize = 10;
+	sf::RenderWindow window(sf::VideoMode(xWin, yWin), "WorldGeneration");
+
+	auto generator = WorldGeneration::Generator(xWin, yWin, blockSize);
 
 	while (window.isOpen())
 	{
@@ -13,6 +17,7 @@ int main()
 				window.close();
 		}
 		window.clear();
+		generator.draw(window);
 		window.display();
 	}
 	return 0;
