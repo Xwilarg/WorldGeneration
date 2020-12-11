@@ -2,7 +2,7 @@
 
 int main()
 {
-	constexpr unsigned int xWin = 500, yWin = 200;
+	constexpr unsigned int xWin = 1200, yWin = 500;
 	constexpr int blockSize = 10;
 	sf::RenderWindow window(sf::VideoMode(xWin, yWin), "WorldGeneration");
 
