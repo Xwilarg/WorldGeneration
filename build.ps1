@@ -1,9 +1,9 @@
-#!/bin/sh
-mkdir -p build                   
+New-Item -ItemType Directory -Force -Path build                  
 cd build
 conan remote add SFML https://api.bintray.com/conan/bincrafters/public-conan
-set -e
+$ErrorActionPreference = "Stop"
 conan install .. --build=missing
 cmake ..
 cmake --build . --config RELEASE
-cp bin/WorldGeneration ..
+cp bin/WorldGeneration.exe ..
+cd ..
